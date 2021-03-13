@@ -1,0 +1,50 @@
+{
+  "name": "tnk",
+  "version": "0.0.1",
+  "description": "Tailwind, Nunjucks, and Koa scaffolding & boilerplate",
+  "main": "src/client/app.main.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build:dev": "rollup -c --environment NODE_ENV:development",
+    "build:prod": "rollup -c --environment NODE_ENV:production",
+    "test:unit": "jest --projects test/unit"
+  },
+  "keywords": [
+    "Tailwind",
+    "Koa",
+    "Nunjucks",
+    "Babel",
+    "Javascript",
+    "Rollup"
+  ],
+  "author": "wan",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/eslint-plugin": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "autoprefixer": "^10.2.5",
+    "core-js": "^3.9.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "nunjucks": "^3.2.3",
+    "postcss": "^8.2.8",
+    "postcss-import": "^14.0.0",
+    "postcss-load-config": "^3.0.1",
+    "postcss-modules": "^4.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "rollup": "^2.41.2",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tailwindcss": "^2.0.3"
+  }
+}
