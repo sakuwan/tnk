@@ -2,7 +2,7 @@ import { resolve } from 'path';
 
 import nunjucks from 'koa-nunjucks-async';
 
-export default nunjucks(resolve('./views'), {
+export default nunjucks(resolve(__dirname, './views'), {
   ext: '.html',
   noCache: process.env.NODE_ENV !== 'production',
   filters: {

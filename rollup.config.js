@@ -6,6 +6,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 
+import { dependencies } from './package.json';
+
+const deps = Object.keys(dependencies);
+
 const stripFilename = (file) => `${file.match(/(?<=\/)[^/]*(?=\.\w+$)/i)}`;
 
 const isProd = process.env.NODE_ENV !== 'development';
@@ -20,8 +24,8 @@ const terserPlugin = terser({
 
 const copyPlugin = copy({
   targets: [
-    { src: './assets/**/*', dest: './dist/public/' },
-    { src: './src/server/views', dest: './dist/views' },
+    { src: './assets/**/*', dest: './dist/public' },
+    { src: './src/server/views', dest: './dist' },
   ],
 });
 
@@ -40,11 +44,15 @@ const generateConfig = (file) => {
   return {
     input: file,
     output: [{
-      file: stripFilename(file),
+      file: `./dist/${stripFilename(file)}.js`,
       format: 'cjs',
+      exports: 'auto',
+
       ...(isProd ? null : { sourcemap: 'inline' }),
     }],
     plugins,
+
+    external: [...deps],
   };
 };
 

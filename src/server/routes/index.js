@@ -1,6 +1,6 @@
 async function handleRoute(ctx) {
-  await ctx.render('main', {
-    title: 'CS Dashboard',
+  await ctx.render('index', {
+    title: 'Test',
   });
 }
 

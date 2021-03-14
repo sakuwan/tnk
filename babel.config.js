@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
     ['@babel/preset-env', {
-      useBuiltIns: 'entry',
+      useBuiltIns: 'usage',
       corejs: 3,
     }],
   ],
@@ -12,10 +12,7 @@ module.exports = {
     '@babel/plugin-proposal-nullish-coalescing-operator',
   ],
 
-  exclude: [
-    '/node_modules/',
-    /(\/|\\)core-js(\/|\\)/,
-  ],
+  exclude: [/node_modules/],
 
   comments: true,
 };

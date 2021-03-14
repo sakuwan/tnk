@@ -21,7 +21,7 @@ app.use(helmet());
 app.use(compress());
 app.use(bodyParser());
 
-app.use(serve(resolve('./dist/public')));
+app.use(serve(resolve(__dirname, './public')));
 
 app.use(render);
 app.use(router);
