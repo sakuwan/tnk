@@ -1,7 +1,5 @@
 async function handleRoute(ctx) {
-  await ctx.render('index', {
-    title: 'Test',
-  });
+  await ctx.render('index', {});
 }
 
 export default {

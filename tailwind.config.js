@@ -1,11 +1,41 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  purge: [
-    './**/*.njk',
-    './**/*.html',
-  ],
-  theme: {
-    extend: {},
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
   },
-  variants: {},
+
+  purge: {
+    content: [
+      './src/**/*.njk',
+      './src/**/*.html',
+    ],
+
+    enabled: true,
+  },
+
+  darkMode: false,
+
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Sinkin Sans', ...defaultTheme.fontFamily.sans],
+      },
+
+      zIndex: {
+        '-1': '-1',
+      },
+    },
+  },
+
+  variants: {
+    extend: {
+      textColor: ['visited'],
+    },
+  },
+
+  corePlugins: {},
+
   plugins: [],
 };

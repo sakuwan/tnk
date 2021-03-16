@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content={{ description }}>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+{% set bodyClasses = "p-4" %}
+{% set mainClasses = "flex-initial max-w-3xl" %}
 
-  <title>{{ title }}</title>
+{% extends "./layouts/_layout.njk" %}
 
-  <link href="./favicon.ico" rel="icon" type="image/x-icon" media="all">
-  <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" media="all">
-</head>
-<body>
+{% block mainContent %}
 
-</body>
-</html>
+{% endblock %}
+
+{% block auxContent %}
+
+{% endblock %}
+
+{% block bodyScripts %}
+  {% if contentScripts %}
+    {% for script in contentScripts %}
+      <script src="{{ script }}"></script>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

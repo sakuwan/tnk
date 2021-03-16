@@ -13,6 +13,8 @@ import compress from 'koa-compress';
 import render from './render';
 import router from './router';
 
+import './styles/app.css';
+
 const app = new Koa();
 if (process.env.NODE_ENV === 'development') app.use(logger());
 
@@ -26,7 +28,8 @@ app.use(serve(resolve(__dirname, './public')));
 app.use(render);
 app.use(router);
 
-export default app.listen(27655, () => {
+const serverPort = process.env.APP_PORT ?? 27655;
+export default app.listen(serverPort, () => {
   // eslint-disable-next-line no-console
-  console.log('[Server] Listening on port: ', 27655);
+  console.log('[Server] Listening on port: ', serverPort);
 });

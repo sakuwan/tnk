@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{ pageTitle if pageTitle else "wan's place" }}</title>
+
+  <meta charset="utf-8">
+
+  {% if metaDescription %}
+    <meta name="description" content={{ metaDescription }}>
+  {% endif %}
+
+  {% if hideViewport %}
+  {% else %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  {% endif %}
+
+  <link href="./assets/favicon.ico" rel="icon" type="image/x-icon" media="all">
+  <link href="./assets/favicon.ico" rel="shortcut icon" type="image/x-icon" media="all">
+
+  <link href="./assets/css/styles.css" rel="stylesheet" media="all">
+
+  {% block headScripts %}
+  {% endblock %}
+
+  {% block headStyles %}
+  {% endblock %}
+</head>
+<body class="font-sans text-base h-screen {{ bodyClasses }}">
+  <div class="flex flex-col items-center h-full pt-8">
+    <main class="{{ mainClasses }}" role="main">
+      {% block mainContent %}
+      {% endblock %}
+    </main>
+
+    {% block auxContent %}
+    {% endblock %}
+
+    <footer class="flex-initial h-4 text-xs" role="contentinfo">
+      {{ footerTag if footerTag else 'Made with 🐕 by wan, © 2021' }}
+    </footer>
+  </div>
+
+{% block bodyScripts %}
+{% endblock %}
+</body>
+</html>
